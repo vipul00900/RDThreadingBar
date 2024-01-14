@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RD Threading Bar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+            background-color: #FFB7C5;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #FC9483;
+            padding: 1em;
+            
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 0.5em;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 0.5em;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        img.slide-image {
+            width: 100%;
+            height: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Threading Bar</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home" class="slideshow-container">
+    	<h2>Welcome to RD Threading Bar</h2>
+        <p>Experience the art of facial threading for a polished and well-groomed look.</p>
+        <!-- Slides -->
+        <div class="mySlides">
+            <img class="slide-image" src="pic1.jpg" alt="Slide 1">
+        </div>
+        <div class="mySlides">
+            <img class="slide-image" src="pic2.jpg" alt="Slide 2">
+        </div>
+        <!-- Add more slides as needed -->
+
+        <!-- Navigation dots for the slideshow -->
+        <div style="text-align:center">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <!-- Add more dots for additional slides -->
+        </div>
+
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <h3>1. Facial Threading</h3>
+        <p>Facial threading is an ancient hair removal technique that uses cotton threads to remove unwanted facial hair. It provides precise control, allowing our estheticians to shape your eyebrows and remove fine facial hair for a clean and defined look.</p>
+
+        <h3>2. Eyebrow Shaping</h3>
+        <p>Our eyebrow shaping service focuses on creating the perfect eyebrow arch and shape to enhance your facial features. Our skilled estheticians work with you to achieve the desired eyebrow shape that complements your face shape and personal style.</p>
+
+        <h3>3. Upper Lip Threading</h3>
+        <p>Upper lip threading is a quick and effective way to remove unwanted hair from the upper lip area. Threading provides precise hair removal, leaving your skin smooth and ensuring a clean upper lip appearance.</p>
+
+        <h3>4. Full Face Threading</h3>
+        <p>Our full face threading service covers all areas of the face, including the forehead, cheeks, chin, and jawline. This comprehensive service provides thorough facial hair removal, leaving your skin looking smooth and radiant.</p>
+
+        <h3>5. Eyebrow Tinting</h3>
+        <p>Enhance the color and definition of your eyebrows with our eyebrow tinting service. Our estheticians use high-quality tint to match your eyebrow color to your desired shade, giving your brows a more defined and polished appearance.</p>
+
+        <h3>6. Eyebrow Waxing</h3>
+        <p>Achieve a clean and well-defined look with our eyebrow waxing service. Our skilled estheticians use gentle waxing techniques to remove unwanted hair and shape your eyebrows, providing a smooth and long-lasting result.</p>
+    </section>
+
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing exceptional facial threading services to enhance your natural beauty. Our team of skilled estheticians takes pride in delivering precise and customized threading techniques tailored to your unique features.</p>
+        <p>At RD Threading Bar, we prioritize your comfort and satisfaction. Our welcoming and relaxing environment ensures that you have a positive and rejuvenating experience during your visit.</p>
+        <p>With years of experience in the beauty industry, we understand the importance of well-groomed brows and smooth, radiant skin. Trust us to bring out the best in your facial features through the ancient art of threading.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Visit us at:</p>
+        <address>
+            36b Upper Market St, Clonroad Beg, <br>
+            Ennis, Co. Clare, V95 HW72
+        </address>
+        <p>Email: Rdthreadingbar@gmail.com</p>
+
+        <!-- Google Map -->
+        <div id="map"></div>
+    </section>
+
+    <footer>
+        &copy; 2024 RD Threading Bar. All rights reserved.
+    </footer>
+
+    <script>
+
+
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+    </script>
+</body>
+
+</html>
